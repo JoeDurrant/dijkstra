@@ -10,12 +10,8 @@ def dijkstra(graph, source):
     
     while len(unvisited) > 0:
         current_node = min(unvisited, key=unvisited.get) # Should get ID number of source node on first loop
-        print("node chosen is "  + str(current_node))
         unvisited.pop(current_node)
-        print(distance)
-        print(unvisited)
         neighbours = graph.neighbours(current_node)
-        print(neighbours)
         for neighbour in neighbours:
             if neighbour in unvisited:
                 a = distance[current_node] + graph.get_edge_value(current_node,neighbour)
