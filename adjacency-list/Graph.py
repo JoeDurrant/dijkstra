@@ -40,7 +40,7 @@ class Graph:
         source.set_edge_value(destination, value)
     
 class Vertex:
-    """Used in conjunction with the Graph class to create a graph based on adjacency matrices
+    """Used in conjunction with the Graph class to create a graph based on adjacency lists
     
     """
     def __init__(self, adjacency_list, id):

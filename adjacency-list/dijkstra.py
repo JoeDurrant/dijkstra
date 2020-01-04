@@ -1,4 +1,4 @@
-from Graph import Graph
+from Graph import Graph, Vertex
 def dijkstra(graph, source):
     distance = {}
     unvisited = {}
@@ -20,4 +20,12 @@ def dijkstra(graph, source):
                     unvisited[neighbour] = a
     return distance
     
-with open(vertices.csv) as f: # Read vertices and edges from file
+import json
+
+vertices = { 0:Vertex({4:1,5:4}, 0), 1:Vertex({3:3, 4:1, 5:1, 6:15}, 1), 
+        2:Vertex({3:6, 6:3}, 2), 3:Vertex({1:3, 2:6, 4:4}, 3), 4:Vertex({0:1, 1:1, 3:4}, 4),
+        5:Vertex({0:4, 1:1}, 5), 6:Vertex({1:15, 2:3}, 6)}
+
+with open('vertices.json', 'w') as fp:
+    for
+    json.dump(vertices, fp)
