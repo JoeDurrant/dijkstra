@@ -12,7 +12,7 @@ class Graph:
         return source.adjacency(destination)
 
     def neighbours(self, source):
-        return source.neighbours()
+        return self.vertices[source].neighbours()
 
     def add_vertex(self, vertex):
         self.vertices[vertex.id] = vertex
@@ -25,6 +25,9 @@ class Graph:
         
     def remove_edge(self, source, destination):
         source.remove_edge(destination)
+    
+    def get_number_of_vertices(self):
+        return len(self.vertices)
 
     """
     def get_vertex_value(self, vertex):
@@ -34,10 +37,10 @@ class Graph:
     """
 
     def get_edge_value(self, source, destination):
-        return source.get_edge_value(destination)
+        return self.vertices[source].get_edge_value(destination)
 
     def set_edge_value(self, source, destination, value):
-        source.set_edge_value(destination, value)
+        self.vertices[source].set_edge_value(destination, value)
     
 class Vertex:
     """Used in conjunction with the Graph class to create a graph based on adjacency lists
